@@ -1,6 +1,6 @@
 {
   "name": "cdk-jwks-endpoint",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "CDK construct that serves JWKS stored in Secrets Manager or SSM parameters from a jwks_uri behind a Function URL, CloudFront, an HTTP API or REST API",
   "keywords": [
     "api-gateway",
