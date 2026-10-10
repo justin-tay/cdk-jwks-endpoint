@@ -133,6 +133,6 @@ fields @timestamp, `event.reason`, `error.type`, `error.message`
   contain dots, so they are written in single-quoted brackets), or on the
   Lambda's `Errors` metric together with the front door's 5XX metric. A `503`
   is not a Lambda error, so the `Errors` metric alone misses it.
-- **The function cannot start.** Alarm on `{ $.['event.action'] = "start_function"
-&& $.['event.outcome'] = "failure" }`: a misconfigured environment fails every
-  request.
+- **The function cannot start.** A misconfigured environment fails every
+  request, so alarm on a metric filter for the failed `start_function` event:
+  `{ $.['event.action'] = "start_function" && $.['event.outcome'] = "failure" }`.
